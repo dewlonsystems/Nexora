@@ -147,7 +147,7 @@ export async function submitContactForm(
   // 6. Send Email via Resend
   try {
     await resend.emails.send({
-      from: 'Nexora Website Leads <info@Nexora.co.ke>', // Make sure this domain is verified in Resend
+      from: 'Nexora Website Leads <info@sipedo.co.ke>', // Make sure this domain is verified in Resend
       to: 'ontitadmose@gmail.com', // Where you want to receive the emails
       subject: `New Lead: ${formattedService} in ${location || 'Nairobi'}`, // Removed emoji
       html: emailHtml,
