@@ -75,7 +75,7 @@ export async function submitContactForm(
         <tr>
           <td style="background-color: #008080; padding: 30px 20px; text-align: center;">
             <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: bold; letter-spacing: 1px;">
-              SIPEDO SERVICES
+              NEXORA CLEANING
             </h1>
             <p style="color: #A2B59F; margin: 5px 0 0 0; font-size: 14px;">
               New Website Lead Received
@@ -87,7 +87,7 @@ export async function submitContactForm(
           <td style="padding: 30px;">
             <p style="font-size: 16px; color: #374151; margin-bottom: 20px;">
               Hello Team,<br><br>
-              A new service request has been submitted through the Sipedo website. Please review the details below and contact the client within 1 hour.
+              A new service request has been submitted through the Nexora website. Please review the details below and contact the client within 1 hour.
             </p>
 
             <table width="100%" cellpadding="12" cellspacing="0" style="background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; margin-bottom: 20px;">
@@ -133,8 +133,9 @@ export async function submitContactForm(
 
         <tr>
           <td style="background-color: #1f2937; padding: 20px; text-align: center; color: #9ca3af; font-size: 12px;">
-            <p style="margin: 0 0 5px 0;">This email was generated automatically from the Sipedo Services website.</p>
-            <p style="margin: 0;"><strong>Timestamp:</strong> ${requestDate}</p>
+            <p style="margin: 0 0 5px 0;">This email was generated automatically from the Nexora website.</p>
+            <p style="margin: 0 0 10px 0;"><strong>Timestamp:</strong> ${requestDate}</p>
+            <p style="margin: 0;">Powered by <a href="https://dewlons.com" style="color: #A2B59F; text-decoration: none;">Dewlon Systems</a></p>
           </td>
         </tr>
 
@@ -146,14 +147,14 @@ export async function submitContactForm(
   // 6. Send Email via Resend
   try {
     await resend.emails.send({
-      from: 'Sipedo Website Leads <info@sipedo.co.ke>', // Make sure this domain is verified in Resend
-      to: 'ontitadmose@gmail.com', // Where you want to receive the emails
-      subject: `🚨 New Lead: ${formattedService} in ${location || 'Nairobi'}`, // More descriptive subject line
+      from: 'Nexora Website Leads <info@Nexora.co.ke>', // Make sure this domain is verified in Resend
+      to: 'info@sipedo.co.ke', // Where you want to receive the emails
+      subject: `New Lead: ${formattedService} in ${location || 'Nairobi'}`, // Removed emoji
       html: emailHtml,
       replyTo: "no-reply@sipedo.co.ke" // Best practice
     });
   } catch (error) {
-    console.error('📧 Resend error:', error);
+    console.error('Resend error:', error); // Removed emoji
     return { message: 'Failed to send. Please try again or call us directly.' };
   }
 
